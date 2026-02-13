@@ -1,0 +1,3 @@
+invalid input , please enter the right input
+error: cannot divided by zero 
+error: cannot divided by zero 
