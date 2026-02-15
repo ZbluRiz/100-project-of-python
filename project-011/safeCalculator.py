@@ -27,18 +27,18 @@ def calculatorMenu():
     print("6. Exit")
     
 def valueErrorMsg():
-    with open(filename, 'a') as file:
+    with open(filename, 'w') as file:
         file.write("invalid input , please enter the right input" + "\n")
 
 def checkMsg():
     return "check errorMessage.txt to see the problem"
 
 def zeroDivMsg(e):
-    with open(filename, 'a') as file:
+    with open(filename, 'w') as file:
         file.write(f"error: {e} " + "\n")
 
 def generalErrorMsg(e):
-    with open(filename, 'a') as file:
+    with open(filename, 'w') as file:
         file.write(f"error: {e} " + "\n")
     
 
