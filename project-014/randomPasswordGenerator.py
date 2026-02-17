@@ -64,10 +64,7 @@ def generatePassword(length = 12):
     random.shuffle(password4)
     
     #join to show the password as a string
-    final1 = "".join(password1)
-    final2 = "".join(password2)
-    final3 = "".join(password3)
-    final4 = "".join(password4)
+    final1,final2,final3,final4 = "".join(password1),"".join(password2),"".join(password3),"".join(password4)
     
     #show the list of password
     print("\n-Password List-")
