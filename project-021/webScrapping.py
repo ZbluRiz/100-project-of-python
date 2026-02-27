@@ -3,6 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def getWikipediaTopic(topic):
     url  = f"https://id.wikipedia.org/wiki/{topic.replace(' ','_')}"
     headers = {
@@ -36,6 +37,11 @@ def getRelatedLinks(soup):
         if href.startswith('/wiki/') and ":" not in href:
             links.append(f"https://id.wikipedia.org{href}")
     return list(set(links))[:5]
+
+def exportToJSON(data, filename):
+    with open(filename, "w", encoding="utf-8") as file:
+        json.dump(data, file, indent=4, ensure_ascii=False)
+    print(f"\n✅ Data exported to {filename}")
 
 def main():
     topic = input("Enter topic : ")
