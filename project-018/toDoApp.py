@@ -2,6 +2,7 @@
 import json
 import os
 from pathlib import Path
+from datetime import datetime
 
 BASE_DIR = Path(__file__).parent
 # File for storing tasks
@@ -26,7 +27,12 @@ def save_tasks(tasks):
 def add_task():
   task_name = input("Enter the task name: ").strip()
   tasks = load_tasks()
-  tasks.append({"task": task_name, "status": "Incomplete"})
+  new_tasks = {
+    "task": task_name, 
+    "status": "Incomplete",
+    "tanggal" : datetime.now().isoformat(),
+  }
+  tasks.append(new_tasks)
   save_tasks(tasks)
   print(f'Task "{task_name}" added successfully!')
 
@@ -36,7 +42,7 @@ def view_tasks():
   if tasks:
     print("\n--- To-Do List ---")
     for idx, task in enumerate(tasks, start=1):
-      print(f"{idx}. {task['task']} - {task['status']}")
+      print(f"{idx}. {task['task']} - {task['status']} - {task['tanggal']}")
   else:
     print("No tasks found.")
 
